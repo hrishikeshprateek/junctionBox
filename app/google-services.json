@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "1093704912494",
+    "project_id": "junction-box-58d76",
+    "storage_bucket": "junction-box-58d76.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1093704912494:android:a2d1375547881d91b0207f",
+        "android_client_info": {
+          "package_name": "com.aigs.junctionbox"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1093704912494-7for5okj8uc1d4g251otb3u9buk71dp4.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBttctVXCozxnaNa9IJP13W0tkG-hhrbwU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1093704912494-7for5okj8uc1d4g251otb3u9buk71dp4.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
