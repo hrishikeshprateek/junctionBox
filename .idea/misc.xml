@@ -6,8 +6,9 @@
         <entry key="app/src/main/res/drawable/button_circle.xml" value="0.1" />
         <entry key="app/src/main/res/drawable/curved_edittext.xml" value="0.1008224487304688" />
         <entry key="app/src/main/res/layout/activity_login.xml" value="0.165" />
-        <entry key="app/src/main/res/layout/activity_main.xml" value="0.44927978515625" />
+        <entry key="app/src/main/res/layout/activity_main.xml" value="0.165" />
         <entry key="app/src/main/res/layout/activity_splash_screen.xml" value="0.125" />
+        <entry key="app/src/main/res/layout/item_recycler_view.xml" value="0.2125" />
       </map>
     </option>
   </component>

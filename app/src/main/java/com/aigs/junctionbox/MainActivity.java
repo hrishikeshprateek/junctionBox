@@ -3,6 +3,7 @@ package com.aigs.junctionbox;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.DialogInterface;
 import android.content.Intent;
@@ -20,11 +21,16 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class MainActivity extends AppCompatActivity {
 
     ImageView logout;
     Button dev1,dev2,dev3,dev4;
     String stat1 = "OFF",stat2 = "OFF",stat3 = "OFF",stat4 ="OFF";
+
+    RecyclerView recyclerView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,6 +42,7 @@ public class MainActivity extends AppCompatActivity {
         dev2 = findViewById(R.id.but1);
         dev3 = findViewById(R.id.but2);
         dev4 = findViewById(R.id.but3);
+        recyclerView = findViewById(R.id.rec);
 
         AlertDialog alertDialog =  new AlertDialog.Builder(MainActivity.this)
                 .setMessage("Processing your request ...")
@@ -247,6 +254,8 @@ public class MainActivity extends AppCompatActivity {
                     @Override
                     public void onDataChange(@NonNull DataSnapshot snapshot) {
                         if (snapshot.exists()){
+                            List<DataSnapshot> list= new ArrayList<>();
+
                             stat1 = snapshot.child("Device1").getValue(String.class);
                             stat2 = snapshot.child("Device2").getValue(String.class);
                             stat3 = snapshot.child("Device3").getValue(String.class);
@@ -256,6 +265,12 @@ public class MainActivity extends AppCompatActivity {
                             dev2.setText("Device 2 : "+stat2);
                             dev3.setText("Device 3 : "+stat3);
                             dev4.setText("Device 4 : "+stat4);
+
+                            for (DataSnapshot dataSnapshot : snapshot.getChildren()){
+                                list.add(dataSnapshot);
+                            }
+                            recyclerView.setAdapter(new StatusAdapter(list));
+
                         }
                     }
 
